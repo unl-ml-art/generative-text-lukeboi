@@ -9,13 +9,18 @@ One of my favorite corners of the internet is [Marginal Revoultion](https://marg
 ## Model/Data
 
 Trained data is in MR Scrapes as saved HTML files
+
 Finetuned models are not included in repo (size constraints) but are automatically downloaded as needed
 
 ## Code
 notebooks:
+
 mr scrapes / parser -> scrapes the comments sections and puts that dataset of comments into /dataset.txt
+
 train -> finetunes GPT2 on dataset.txt
+
 inference -> runs intference and puts output in output.txt
+
 create html -> creates HTML page from plaintext output in output.txt
 
 ## Results
@@ -25,6 +30,7 @@ see results in Full generation.html
 ## Technical Notes
 
 used beautifulsoup which seems like a nice tool
+
 i should clean this up once it's not 4am
 
 ## Reference
