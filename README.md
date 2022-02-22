@@ -4,36 +4,29 @@ Luke Farritor, yourcontact@unl.edu
 
 ## Abstract
 
-One of my favorite corners of the internet is [Marginal Revoultion](https://marginalrevolution.com/) (MR), a blog by economists Tyler Cowen and Alex Tabarrok. The authors share a few posts a day covering a wide range of topics from economics, art, politics, philosophy and everything in between. MR has a comments section, which ranges from high quality discussion to low quality jokes and everything in between. I'd like to finetune GPT-2 to generate MR comments based on real posts. Creating a datset is easy - MR has had comments ranging back over 15 years, and scraping should not be difficult. As a strech goal, I could create a seperate lookalike/parody website showcasing the fake comments, with a disclaimer that the site is not affiliated with the real MR.
-
-Include your abstract here. This should be one paragraph clearly describing your concept, method, and results. This should tell us what architecture/approach you used. Also describe your creative goals, and whether you were successful in achieving them. Also could describe future directions.
+One of my favorite corners of the internet is [Marginal Revoultion](https://marginalrevolution.com/) (MR), a blog by economists Tyler Cowen and Alex Tabarrok. The authors share a few posts a day covering a wide range of topics from economics, art, politics, philosophy and everything in between. MR has a comments section, which ranges from high quality discussion to low quality jokes and everything in between. I finetune GPT-2 to generate MR comments based on real posts. Creating a datset was easy - MR has had comments ranging back over 15 years. I had difficulty scraping automatically, as their antispam seemed to block my scripts (even when sending requests very slowly). Instead, I just manually saved a large number of comments pages to a directory. As a strech goal, I could create a seperate lookalike/parody website showcasing the fake comments, with a disclaimer that the site is not affiliated with the real MR.
 
 ## Model/Data
 
-Briefly describe the files that are included with your repository:
-- trained models
-- training data (or link to training data). what is your corpus?
+Trained data is in MR Scrapes as saved HTML files
+Finetuned models are not included in repo (size constraints) but are automatically downloaded as needed
 
 ## Code
-
-Your code for generating your project:
-- training_code.py or training_code.ipynb - your training code
-- generative_code.py or generative_code.ipynb - your generation code
+notebooks:
+mr scrapes / parser -> scrapes the comments sections and puts that dataset of comments into /dataset.txt
+train -> finetunes GPT2 on dataset.txt
+inference -> runs intference and puts output in output.txt
+create html -> creates HTML page from plaintext output in output.txt
 
 ## Results
 
-- Documentation of your generative text in an effective form. A file with your generated text (.pdf, .doc, .txt). 
+see results in Full generation.html
 
 ## Technical Notes
 
-Any implementation details or notes we need to repeat your work. 
-- Does this code require other pip packages, software, etc?
-- Does it run on some other (non-datahub) platform? (CoLab, etc.)
+used beautifulsoup which seems like a nice tool
+i should clean this up once it's not 4am
 
 ## Reference
 
-References to any papers, techniques, repositories you used:
-- Papers
-  - [This is a paper](this_is_the_link.pdf)
-- Repositories
-- Blog posts
+  - [MARGINAL REVOULTION ITSELF](marginalrevoultion.com)
